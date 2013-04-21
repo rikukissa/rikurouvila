@@ -4,7 +4,7 @@ section{width:100%;height:100%;min-height:100%;position:relative;background:#2c4
 #logo{position:absolute;top:50%;left:50%;margin-left:-257px;margin-top:-54px;text-align:center;}
 #logo .logo-riku{width:207px}
 #logo .logo-rouvila{width:307px}
-#footer{height:63px;margin-top:-63px;position:relative;padding:5px 10px;overflow:hidden}
+#footer{bottom:0;left:0;position:absolute;padding:5px 10px}
 .icon{width:48px;height:48px;-webkit-border-radius:24px;-moz-border-radius:24px;-ms-border-radius:24px;-o-border-radius:24px;border-radius:24px;background-size:100% 100%;display:inline-block;margin:0 3px;-webkit-transition:all .4s;-moz-transition:all .4s;-ms-transition:all .4s;-o-transition:all .4s;transition:all .4s;-webkit-transform:scale(.8,.8) translateZ(0);-moz-transform:scale(.8,.8) translateZ(0);-ms-transform:scale(.8,.8) translateZ(0);-o-transform:scale(.8,.8) translateZ(0);transform:scale(.8,.8) translateZ(0);-webkit-box-shadow:1px 1px 0 rgba(255,255,255,0.1);-moz-box-shadow:1px 1px 0 rgba(255,255,255,0.1);-ms-box-shadow:1px 1px 0 rgba(255,255,255,0.1);-o-box-shadow:1px 1px 0 rgba(255,255,255,0.1);box-shadow:1px 1px 0 rgba(255,255,255,0.1);}
 .icon.icon-github{background-image:url("../img/icon-github.png")}
 .icon.icon-twitter{background-image:url("../img/icon-twitter.png")}
