@@ -1,15 +1,23 @@
 (function() {
   require.config({
-    baseUrl: "js/modules"
+    baseUrl: "js/modules",
+    paths: {
+      'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min',
+      'image': '../vendor/image'
+    }
   });
 
   define(function(require) {
+    var $, stripes;
+
+    $ = require('jquery');
+    stripes = require('stripes');
     return {
       main: function() {
         var _gaq;
 
         _gaq = [["_setAccount", "UA-31648732-1"], ["_setDomainName", "rikurouvila.fi"], ["_trackPageview"]];
-        return (function() {
+        (function() {
           var ga, s;
 
           ga = document.createElement("script");
@@ -19,6 +27,7 @@
           s = document.getElementsByTagName("script")[0];
           return s.parentNode.insertBefore(ga, s);
         })();
+        return stripes.init();
       }
     };
   });

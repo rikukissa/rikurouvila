@@ -1,11 +1,15 @@
 require.config
   baseUrl: "js/modules"
-  #paths: 
-    #'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min'
+  paths: 
+    'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min'
+    'image': '../vendor/image'
         
 define (require) ->
+  $       = require('jquery')
+  stripes = require('stripes')
+
   main: () ->
-    
+
     # Google analytics
     _gaq = [
       ["_setAccount", "UA-31648732-1"], 
@@ -21,3 +25,5 @@ define (require) ->
       s = document.getElementsByTagName("script")[0]
       s.parentNode.insertBefore ga, s
     )()
+    
+    stripes.init()
