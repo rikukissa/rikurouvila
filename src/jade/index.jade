@@ -15,16 +15,17 @@ html
         }
 
   body
-    section
+    section#main
       #logo
         img.logo-riku(src='img/riku.png')
         img.logo-rouvila(src='img/rouvila.png')
-    canvas#cnv
-    #footer
-      a(href='https://github.com/rikukissa', target='_blank'): img.icon(src='img/icon-github.png')
-      a(href='https://www.facebook.com/riku.rouvila', target='_blank'): img.icon(src='img/icon-facebook.png')
-      a(href='https://twitter.com/rikurouvila', target='_blank'): img.icon(src='img/icon-twitter.png')
-      a(href='http://www.linkedin.com/in/rikurouvila', target='_blank'): img.icon(src='img/icon-linkedin.png')
+      canvas#stars
+      .footer
+        a(href='https://github.com/rikukissa', target='_blank'): img.icon(src='img/icon-github.png')
+        a(href='https://www.facebook.com/riku.rouvila', target='_blank'): img.icon(src='img/icon-facebook.png')
+        a(href='https://twitter.com/rikurouvila', target='_blank'): img.icon(src='img/icon-twitter.png')
+        a(href='http://www.linkedin.com/in/rikurouvila', target='_blank'): img.icon(src='img/icon-linkedin.png')
+    section#portfolio
 
     script(type='text/javascript')
       require(['app'], function(app){ app.main() })

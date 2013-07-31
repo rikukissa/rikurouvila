@@ -37,42 +37,6 @@ html, body
   width 100%
   height 100%
   background #2c4762 /* Old browsers */
-  overflow hidden
-
-section
-  width 100%
-  height 100%
-  min-height 100%
-  position relative
-  background #2c4762 /* Old browsers */
-  background -moz-linear-gradient(top,  #2c4762 0%, #12263a 100%) /* FF3.6+ */
-  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c4762), color-stop(100%,#12263a)) /* Chrome,Safari4+ */
-  background -webkit-linear-gradient(top,  #2c4762 0%,#12263a 100%) /* Chrome10+,Safari5.1+ */
-  background -o-linear-gradient(top,  #2c4762 0%,#12263a 100%) /* Opera 11.10+ */
-  background -ms-linear-gradient(top,  #2c4762 0%,#12263a 100%) /* IE10+ */
-  background linear-gradient(to bottom,  #2c4762 0%,#12263a 100%) /* W3C */
-
-#cnv
-  position absolute
-  top 0 
-  right 0
-  display block
-#logo
-  position absolute
-  top 50%
-  left 50%
-  margin-left -257px
-  margin-top -54px
-  text-align center
-  .logo-riku
-    width 207px
-  .logo-rouvila
-    width 307px
-#footer
-  bottom 0
-  left 0
-  position absolute
-  padding 5px 10px
 
 .icon
   width 48px
@@ -96,6 +60,62 @@ section
     transform scale(1, 1) translateZ(0)
     // box-shadow 1px 1px 4px rgba(0, 0, 0, 0.1)
     box-shadow 0 0 10px rgba(255, 255, 255, 0.2)
+
+#stars
+  position absolute
+  top 0 
+  right 0
+  display block
+
+section
+  width 100%
+  height 100%
+  min-height 100%
+  position relative
+  background #2c4762 /* Old browsers */
+  background -moz-linear-gradient(top,  #2c4762 0%, #12263a 100%) /* FF3.6+ */
+  background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c4762), color-stop(100%,#12263a)) /* Chrome,Safari4+ */
+  background -webkit-linear-gradient(top,  #2c4762 0%,#12263a 100%) /* Chrome10+,Safari5.1+ */
+  background -o-linear-gradient(top,  #2c4762 0%,#12263a 100%) /* Opera 11.10+ */
+  background -ms-linear-gradient(top,  #2c4762 0%,#12263a 100%) /* IE10+ */
+  background linear-gradient(to bottom,  #2c4762 0%,#12263a 100%) /* W3C */
+
+#logo
+  position absolute
+  top 50%
+  left 50%
+  margin-left -257px
+  margin-top -54px
+  text-align center
+  .logo-riku
+    width 207px
+  .logo-rouvila
+    width 307px
+
+#main
+  .footer
+    bottom 0
+    left 0
+    position absolute
+    padding 5px 10px
+
+#portfolio
+  background #f5f5f5
+  background-image linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
+  background-image -o-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
+  background-image -moz-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
+  background-image -webkit-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
+  background-image -ms-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
+
+  background-image -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0.3, #FFFFFF),
+    color-stop(0.65, #F5F5F5)
+  )
+  border-top 1px solid #fff
+  box-shadow inset 0px 50px 50px -25px #FFFFFF, 0px -6px 6px rgba(0, 0, 0, 0.2)
 
 
 @media all and (max-width: 600px)

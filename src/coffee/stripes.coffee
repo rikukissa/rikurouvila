@@ -82,14 +82,14 @@ define (require) ->
     tick()    
 
   init: ->
-    ctx = document.getElementById('cnv').getContext '2d'
+    ctx = document.getElementById('stars').getContext '2d'
+    
     $(window).on('resize', ->
       $(ctx.canvas).attr 
         'width': width + offset
         'height': $(window).height() 
       width = $(window).width() / 10
       launch() if !running
-
     ).resize()
 
     launch()
