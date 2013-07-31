@@ -21,10 +21,9 @@ define (require) ->
   followers = 15
 
   class Star
-    constructor: (@follower = false) ->
-      @alive = true
-      
+    constructor: (@follower = false) ->      
       @y = height - 16
+
       if not @follower
         @x = -16 + Math.random() * width
         @vel =
@@ -36,20 +35,19 @@ define (require) ->
           x: 0
           y: -3 * Math.random()
 
-    destroy: -> @alive = false
+    destroy: -> 
+      stars.splice stars.indexOf(this), 1
 
     render: ->
       ctx.drawImage sprite, @x, @y
       @x += @vel.x
       @y += @vel.y
-      if @follower
-        @vel.y += 1
-      else
-        @vel.y += 0.3
+
+      if @follower then @vel.y += 1 else @vel.y += 0.3
 
       @vel.y = -2 if @y > height - 10 and @follower
 
-      @destroy() if @y > ctx.canvas.height
+      @destroy() if @y - 16 > ctx.canvas.height
 
   tick = ->
 
@@ -65,14 +63,12 @@ define (require) ->
       ctx.fillRect Math.ceil(width/colors.length) * i, 0, Math.ceil(width/colors.length), height
       ctx.restore()
 
-    for star, i in stars.slice(0)
-      star.render() 
-      stars.splice i, 1 if not star.alive
+    star.render() for star, i in stars by -1 
 
     ctx.restore()
     height += 3
 
-    running = false if height > $(window).height()
+    running = false if height > $(window).height() and stars.length is 0
     requestAnimFrame tick if stars.length > 0
 
   launch = ->
