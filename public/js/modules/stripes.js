@@ -20,7 +20,6 @@
     Star = (function() {
       function Star(follower) {
         this.follower = follower != null ? follower : false;
-        this.alive = true;
         this.y = height - 16;
         if (!this.follower) {
           this.x = -16 + Math.random() * width;
@@ -38,7 +37,7 @@
       }
 
       Star.prototype.destroy = function() {
-        return this.alive = false;
+        return stars.splice(stars.indexOf(this), 1);
       };
 
       Star.prototype.render = function() {
@@ -53,7 +52,7 @@
         if (this.y > height - 10 && this.follower) {
           this.vel.y = -2;
         }
-        if (this.y > ctx.canvas.height) {
+        if (this.y - 16 > ctx.canvas.height) {
           return this.destroy();
         }
       };
@@ -62,7 +61,7 @@
 
     })();
     tick = function() {
-      var color, i, star, _i, _j, _len, _len1, _ref;
+      var color, i, star, _i, _j, _len;
 
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       if (running) {
@@ -77,17 +76,13 @@
         ctx.fillRect(Math.ceil(width / colors.length) * i, 0, Math.ceil(width / colors.length), height);
         ctx.restore();
       }
-      _ref = stars.slice(0);
-      for (i = _j = 0, _len1 = _ref.length; _j < _len1; i = ++_j) {
-        star = _ref[i];
+      for (i = _j = stars.length - 1; _j >= 0; i = _j += -1) {
+        star = stars[i];
         star.render();
-        if (!star.alive) {
-          stars.splice(i, 1);
-        }
       }
       ctx.restore();
       height += 3;
-      if (height > $(window).height()) {
+      if (height > $(window).height() && stars.length === 0) {
         running = false;
       }
       if (stars.length > 0) {
@@ -106,7 +101,7 @@
     };
     return {
       init: function() {
-        ctx = document.getElementById('cnv').getContext('2d');
+        ctx = document.getElementById('stars').getContext('2d');
         $(window).on('resize', function() {
           $(ctx.canvas).attr({
             'width': width + offset,

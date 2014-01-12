@@ -1,28 +1,30 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700')
+
 vendor(prop, args)
   -webkit-{prop} args
   -moz-{prop} args
   -ms-{prop} args
   -o-{prop} args
   {prop} args
- 
+
 border-radius()
   vendor('border-radius', arguments)
- 
+
 user-select()
   vendor('user-select', arguments)
- 
+
 box-shadow()
   vendor('box-shadow', arguments)
- 
+
 box-sizing()
   vendor('box-sizing', arguments)
- 
+
 transition()
   vendor('transition', arguments)
- 
+
 transform()
   vendor('transform', arguments)
- 
+
 animation()
   vendor('animation', arguments)
 
@@ -37,7 +39,7 @@ html, body
   width 100%
   height 100%
   background #2c4762 /* Old browsers */
-
+  font-family 'Open Sans', sans-serif
 .icon
   width 48px
   height 48px
@@ -63,7 +65,7 @@ html, body
 
 #stars
   position absolute
-  top 0 
+  top 0
   right 0
   display block
 
@@ -99,23 +101,46 @@ section
     position absolute
     padding 5px 10px
 
-#portfolio
-  background #f5f5f5
-  background-image linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
-  background-image -o-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
-  background-image -moz-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
-  background-image -webkit-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
-  background-image -ms-linear-gradient(left top, #FFFFFF 30%, #F5F5F5 65%)
+#tulikipina
+  background url(../img/tulikipina.png)
+  background-size cover
 
-  background-image -webkit-gradient(
-    linear,
-    left top,
-    right bottom,
-    color-stop(0.3, #FFFFFF),
-    color-stop(0.65, #F5F5F5)
-  )
-  border-top 1px solid #fff
-  box-shadow inset 0px 50px 50px -25px #FFFFFF, 0px -6px 6px rgba(0, 0, 0, 0.2)
+#domo
+  background url(../img/domo.png)
+  background-size cover
+
+#responsive-design
+  background url(../img/responsive-design.png)
+  background-size cover
+
+.project-info
+  width 300px
+  height 100%
+  padding 1em
+  background rgba(255, 255, 255, 0.8)
+  position absolute
+  right 0
+  top 0
+
+.project-title
+  color #444
+  margin 1em 0
+  font-weight 300
+
+.project-description
+  font-weight 300
+
+.project-btn
+  position absolute
+  bottom 0
+  left 0
+  height 60px
+  text-align center
+  line-height 60px
+  color #fff
+  background red
+  width 100%
+  background #3E80C2
 
 
 @media all and (max-width: 600px)
